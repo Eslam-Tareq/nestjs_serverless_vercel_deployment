@@ -55,6 +55,8 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
   ]
 }
 ```
+---
+## tsconfig.json
 ```ts-config
 {
   "compilerOptions": {
