@@ -1,9 +1,3 @@
-## 📂 Project Structure
-
-Here is a breakdown of the key files and directories in this project and their roles in a serverless NestJS deployment on Vercel.
-Of course. Here is the "Project Structure" section formatted in Markdown, ready to be copied and pasted directly into your README.md file.
-
-Markdown
 
 ## 📂 Project Structure
 
