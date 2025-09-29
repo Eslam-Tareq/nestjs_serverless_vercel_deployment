@@ -12,7 +12,7 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 
 - [📂 Project Structure](#-project-structure)  
 - [⚡ vercel.json](#-verceljson)  
-- [ tsconfig.json](#-tsconfigjson)  
+- [ tsconfig.json](#tsconfigjson)  
 - [🚀 Serverless Entry Point](#-serverless-entry-point-apiindexts)  
 - [⚙️ Installation](#️-installation)  
 - [🖥️ Local Development](#️-local-development)  
