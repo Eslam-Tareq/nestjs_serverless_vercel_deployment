@@ -11,11 +11,12 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 ## 📑 Table of Contents
 
 - [📂 Project Structure](#-project-structure)  
+- [⚡ vercel.json](#-verceljson)  
+- [ tsconfig.json](#-tsconfigjson)  
+- [🚀 Serverless Entry Point](#-serverless-entry-point-apiindexts)  
 - [⚙️ Installation](#️-installation)  
 - [🖥️ Local Development](#️-local-development)  
 - [🌐 Deployment on Vercel](#-deployment-on-vercel)  
-- [🚀 Serverless Entry Point](#-serverless-entry-point-apiindexts)  
-- [⚡ vercel.json](#-verceljson)  
 - [✅ Features](#-features)  
 - [📌 Notes](#-notes)  
 
@@ -43,7 +44,10 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 ---
 
 ## ⚡ vercel.json
-
+- this file should be in the root of your project
+- it tells vercel to use `api/index.ts` as the entry point for all requests
+- it uses the `@vercel/node` builder to handle the serverless function
+- you can customize the routes as needed
 ```json
 {
   "version": 2,
@@ -57,6 +61,10 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 ```
 ---
 ## tsconfig.json
+- this file is important for the TypeScript compiler to work correctly with NestJS and Vercel
+- make sure to set `esModuleInterop` to `true`
+- uncomment `baseUrl` if you want to use absolute imports
+- you can customize other options as needed
 ```json
 {
   "compilerOptions": {
@@ -85,7 +93,10 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 ---
 
 ## 🚀 Serverless Entry Point (`api/index.ts`)
-
+- this file is the entry point for the Vercel serverless function
+- it bootstraps the NestJS application and handles incoming requests
+- it uses caching to improve cold start performance
+- you can add global middlewares, pipes, interceptors, etc. here
 ```ts
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
