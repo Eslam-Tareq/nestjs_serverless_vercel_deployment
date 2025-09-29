@@ -42,43 +42,44 @@ Deploy **NestJS** on **Vercel** as a **serverless function** with a clean separa
 
 ---
 
-## ⚙️ Installation
+## ⚡ vercel.json
 
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-npm install
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.ts", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/index.ts" }
+  ]
+}
 ```
+```ts-config
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true, # make sure to set this to true
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    //"baseUrl": "./",   # make sure to uncomment 
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
+  }
+}
 
----
-
-## 🖥️ Local Development
-
-```bash
-npm run start:dev
 ```
-
-Your app runs on 👉 `http://localhost:3000`
-
----
-
-## 🌐 Deployment on Vercel
-
-1. Install CLI (optional):
-
-   ```bash
-   npm i -g vercel
-   ```
-
-2. Deploy:
-
-   ```bash
-   vercel
-   ```
-3. go to vercel dashboard and set environment variables if needed.
-
-4. Production app will serve requests via `api/index.ts`.
-
 ---
 
 ## 🚀 Serverless Entry Point (`api/index.ts`)
@@ -118,22 +119,46 @@ export default async function handler(req, res) {
 ```
 
 ---
+## ⚙️ Installation
 
-## ⚡ vercel.json
-
-```json
-{
-  "version": 2,
-  "builds": [
-    { "src": "api/index.ts", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "api/index.ts" }
-  ]
-}
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+npm install
 ```
 
 ---
+
+## 🖥️ Local Development
+
+```bash
+npm run start:dev
+```
+
+Your app runs on 👉 `http://localhost:3000`
+
+---
+
+## 🌐 Deployment on Vercel
+
+1. Install CLI (optional):
+
+   ```bash
+   npm i -g vercel
+   ```
+
+2. Deploy:
+
+   ```bash
+   vercel
+   ```
+3. go to vercel dashboard and set environment variables if needed.
+
+4. Production app will serve requests via `api/index.ts`.
+
+---
+
+
 
 ## ✅ Features
 
